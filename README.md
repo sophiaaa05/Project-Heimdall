@@ -27,3 +27,4 @@ To build a reproducible data pipeline in **QGIS** and **Python** that transforms
 
 ---
 
+Data provided by Lantmäteriet via the SLU GET portal for academic use.
