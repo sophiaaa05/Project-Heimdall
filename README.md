@@ -14,9 +14,11 @@ Feedback from anyone working in the field is genuinely welcome.
 
 ## Overview
 
-This project develops a reproducible data pipeline that transforms raw airborne LiDAR point clouds into high-contrast relief models for archaeological site identification. The target study areas are **Gamla Uppsala** and **Birka** — both well-documented Viking-age sites, which allows pipeline outputs to be validated against known features in the RAÄ Fornsök heritage register before being applied to less-surveyed terrain.
+This project develops a reproducible data pipeline that transforms raw airborne LiDAR point clouds into high-contrast relief models for archaeological site identification. The target study areas is **Gamla Uppsala**  which is well-documented site, which allows pipeline outputs to be validated against known features in the RAÄ Fornsök heritage register before being applied to less-surveyed terrain.
 
 The core methodology strips away modern vegetation and infrastructure from elevation data to reveal anthropogenic subsurface features: burial mounds, stone circles, field systems, and ancient settlement foundations.
+
+Basically, to have me learn QGIS and get used to seeing archeological sites and deal with this type of data
 
 ---
 
@@ -39,7 +41,7 @@ The core methodology strips away modern vegetation and infrastructure from eleva
 Download raw Laserdata NH (`.laz`) or pre-processed Grid 2+ CLIP (`.tif`) for the target area via the Lantmäteriet GET portal.
 
 ### Step 2 — Ground Filtering & DTM Generation
-Use a PDAL JSON pipeline to isolate Class 2 (Ground) returns, removing vegetation and built structures. Convert the filtered point cloud to a Digital Terrain Model (DTM) via TIN interpolation.
+Use a PDAL JSON pipeline to isolate Class 2 (Ground) returns, removing vegetation and built structures. Convert the filtered point cloud to a Digital Terrain Model (DTM).
 
 ### Step 3 — Relief Visualization
 Apply RVT methods proven to reveal small-scale archaeological features:
@@ -49,12 +51,7 @@ Apply RVT methods proven to reveal small-scale archaeological features:
 
 ### Step 4 — Validation
 Overlay outputs against the RAÄ Fornsök heritage register. Known mounds serve as a benchmark; unregistered anomalies are flagged for further review.
-
-### Step 5 — Reproducibility
-The full pipeline is documented as:
-- Parametric PDAL JSON files (bounding box as input variable)
-- A QGIS Graphical Modeler `.model3` file for one-click execution
-- An Anaconda `environment.yml` for environment replication
+compare the .tif to my model to verify i did it right
 
 ---
 
