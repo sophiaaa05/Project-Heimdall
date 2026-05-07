@@ -1,0 +1,24 @@
+{
+  "pipeline": [
+    {
+      "type": "readers.las",
+      "filename": "../data/processed/ground_only.laz",
+      "tag": "read"
+    },
+    {
+      "type": "filters.reprojection",
+      "out_srs": "EPSG:3006",
+      "tag": "reproject"
+    },
+    {
+      "type": "writers.gdal",
+      "filename": "../data/processed/dtm.tif",
+      "resolution": 0.5,
+      "output_type": "idw",
+      "radius": 1.0,
+      "nodata": -9999,
+      "gdalopts": "COMPRESS=DEFLATE,TILED=YES,BIGTIFF=IF_SAFER",
+      "tag": "write"
+    }
+  ]
+}

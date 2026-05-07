@@ -1,0 +1,20 @@
+{
+  "pipeline": [
+    {
+      "type": "readers.las",
+      "filename": "../data/raw/input.laz",
+      "tag": "read"
+    },
+    {
+      "type": "filters.range",
+      "limits": "Classification[2:2]",
+      "tag": "ground_filter"
+    },
+    {
+      "type": "writers.las",
+      "filename": "../data/processed/ground_only.laz",
+      "compression": "laszip",
+      "tag": "write"
+    }
+  ]
+}
