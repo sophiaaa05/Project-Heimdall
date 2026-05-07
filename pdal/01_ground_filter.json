@@ -2,7 +2,7 @@
   "pipeline": [
     {
       "type": "readers.las",
-      "filename": "../data/raw/input.laz",
+      "filename": "../input.laz",
       "tag": "read"
     },
     {
